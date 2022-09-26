@@ -1,0 +1,213 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSCulling_0
+#pragma kernel CSCulling_1
+#pragma kernel CSCulling_2
+#pragma kernel CSCulling_3
+#pragma kernel CSCulling_4
+#pragma kernel CSCulling_5
+#pragma kernel CSCulling_6
+#pragma kernel CSCulling_7
+#pragma kernel CSCulling_8
+#pragma kernel CSCulling_9
+#pragma kernel CSCulling_10
+#pragma kernel CSCulling_11
+#pragma kernel CSCulling_12
+#pragma kernel CSCulling_13
+#pragma kernel CSCulling_14
+#pragma kernel CSCulling_15
+
+// Create a RenderTexture with enableRandomWrite flag and set it
+// with cs.SetTexture
+
+#include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl" // required by the below file (I believe)
+#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+
+struct GPUItemStruct
+{
+	float3 Position;
+	float4x4 Matrix;
+};
+
+StructuredBuffer<GPUItemStruct> posAllBuffer;
+RWStructuredBuffer<int> bufferWithArgs;
+AppendStructuredBuffer<GPUItemStruct> posVisibleBuffer;
+float3 cmrPos;
+float3 cmrDir;
+float cmrHalfFov;
+float4x4 matrix_VP;
+int countPerDimention;
+
+float modelRadius;
+float clipAdjust;
+
+int _HZCullingEnable;
+
+Texture2D _HZB_Depth;
+
+void cull(uint3 id) {
+
+	// 计算范围必须限制，否则数据稍多一点，显示结果就会闪烁。
+	// 原因：每一维上线程组里线程是8个，而 countPerDimention并非一定是8的倍数，如果不进行限制，每一维度最后的一个线程组中多余的几个线程也在计算，posAllBuffer[index] 中index可能超出数组长度。于是给最终结果里添加一些随机错误值。也可能导致GPU中出错而出现大范围闪烁现象。
+	if (id.y >= countPerDimention || id.x >= countPerDimention) return;
+
+	uint index = id.y * countPerDimention + id.x;
+
+	float3 itemPos = posAllBuffer[index].Position;
+	float3 itemDir = normalize(itemPos - cmrPos);
+	float rot = dot(cmrDir, itemDir);
+
+	// float4 clipPos = mul(matrix_VP, float4(itemPos, 1));
+	float4 clipPos = mul(matrix_VP, float4(itemPos - cmrDir * modelRadius, 1)); // https://zhuanlan.zhihu.com/p/278793984 认为这样可以把草考虑成半径0.2的球体
+
+	if (max(abs(clipPos.x), abs(clipPos.y)) > clipPos.w + clipAdjust)return; // 考虑草本身有大小，需要稍微外扩，故加了个0.7经验值。也是来源于上述知乎帖的经验值。而自己测试这个值适用于我们的草
+	
+	if (_HZCullingEnable) { //Clip By HipZ
+		
+		clipPos.xyz /= clipPos.w;
+		clipPos.xy = clipPos.xy * 0.5 + 0.5;
+
+		/*	 float4 clip_left_Pos = mul(matrix_VP, float4(itemPos - half3(0.5, 0.5, 0.5),1));
+		clip_left_Pos.xyz /= clip_left_Pos.w;
+		clip_left_Pos.xy = clip_left_Pos.xy * 0.5 + 0.5;
+
+		float scWid =max(abs(clipPos.x - clip_left_Pos.x), abs(clipPos.y - clip_left_Pos.y)) * 1024;
+		clip_left_Pos = mul(matrix_VP, float4(itemPos + half3(0.5, 0.5, 0.5), 1));
+		clip_left_Pos.xyz /= clip_left_Pos.w;
+		clip_left_Pos.xy = clip_left_Pos.xy * 0.5 + 0.5;
+
+		scWid =max(scWid, max(abs(clipPos.x - clip_left_Pos.x), abs(clipPos.y - clip_left_Pos.y)) * 1024); */
+
+		float scWid = 0.2 / (tan(cmrHalfFov * 3.1415926 / 180)* clipPos.w) * 1024;
+
+		uint mips = ( uint)clamp(log2(scWid),0,7);
+		// if (scWid < 20 && index % max(2,((uint)scWid/1.5))==0)return;
+		uint texScale = 1 << mips;
+		uint2 uv = uint2( clipPos.xy * (1024 / texScale));
+
+		// float4 minD = _HiZTextureTex[id.xy];
+
+		// float minD = _HiZTextureTex.SampleLevel(sampler_HiZTextureTex, id.xy, 0).r;
+		float minD =min( min(_HZB_Depth.mips[mips][uv.xy + uint2(0, 0)].r, _HZB_Depth.mips[mips][uv.xy + uint2(0, 1)].r), min(_HZB_Depth.mips[mips][uv.xy + uint2(1, 0)].r, _HZB_Depth.mips[mips][uv.xy + uint2(1, 1)].r));
+		
+		// float minD = myValue[uv].r;
+	 
+		// float minD =min( min(_CameraDepthTexture.mips[mips][uv.xy + uint2(0, 0)].r, _CameraDepthTexture.mips[mips][uv.xy + uint2(0, 1)].r), min(_CameraDepthTexture.mips[mips][uv.xy + uint2(1, 0)].r, _CameraDepthTexture.mips[mips][uv.xy + uint2(1, 1)].r));
+
+
+		#if UNITY_UV_STARTS_AT_TOP
+		if (minD > clipPos.z)return;
+		#else
+		if (minD < clipPos.z)return;
+		#endif
+		
+	}
+
+	
+
+	//posVisibleBuffer[index] = posAllBuffer[index]; // 这是在CPU直接用 instanceCount指定需要绘制的个数时，用的方式。
+
+	//int currentIndex;
+	//InterlockedAdd(bufferWithArgs[1], 1, currentIndex); // 将需要绘制的个数加一，从而得到最终需要绘制的个数。上述知乎帖说实测这个比专门为此功能设计的ComputeBufferType.Append性能还好
+	//posVisibleBuffer[currentIndex] = posAllBuffer[index];
+	posVisibleBuffer.Append(posAllBuffer[index]);
+}
+
+
+
+
+[numthreads(8, 8, 1)]
+void CSCulling_0(uint3 id : SV_DispatchThreadID)
+{
+	cull(id);
+}
+
+[numthreads(8, 8, 1)]
+void CSCulling_1(uint3 id : SV_DispatchThreadID)
+{
+	cull(id);
+}
+
+[numthreads(8, 8, 1)]
+void CSCulling_2(uint3 id : SV_DispatchThreadID)
+{
+	cull(id);
+}
+
+[numthreads(8, 8, 1)]
+void CSCulling_3(uint3 id : SV_DispatchThreadID)
+{
+	cull(id);
+}
+
+[numthreads(8, 8, 1)]
+void CSCulling_4(uint3 id : SV_DispatchThreadID)
+{
+	cull(id);
+}
+
+[numthreads(8, 8, 1)]
+void CSCulling_5(uint3 id : SV_DispatchThreadID)
+{
+	cull(id);
+}
+
+[numthreads(8, 8, 1)]
+void CSCulling_6(uint3 id : SV_DispatchThreadID)
+{
+	cull(id);
+}
+
+[numthreads(8, 8, 1)]
+void CSCulling_7(uint3 id : SV_DispatchThreadID)
+{
+	cull(id);
+}
+
+[numthreads(8, 8, 1)]
+void CSCulling_8(uint3 id : SV_DispatchThreadID)
+{
+	cull(id);
+}
+
+[numthreads(8, 8, 1)]
+void CSCulling_9(uint3 id : SV_DispatchThreadID)
+{
+	cull(id);
+}
+
+[numthreads(8, 8, 1)]
+void CSCulling_10(uint3 id : SV_DispatchThreadID)
+{
+	cull(id);
+}
+
+[numthreads(8, 8, 1)]
+void CSCulling_11(uint3 id : SV_DispatchThreadID)
+{
+	cull(id);
+}
+
+[numthreads(8, 8, 1)]
+void CSCulling_12(uint3 id : SV_DispatchThreadID)
+{
+	cull(id);
+}
+
+[numthreads(8, 8, 1)]
+void CSCulling_13(uint3 id : SV_DispatchThreadID)
+{
+	cull(id);
+}
+
+[numthreads(8, 8, 1)]
+void CSCulling_14(uint3 id : SV_DispatchThreadID)
+{
+	cull(id);
+}
+
+[numthreads(8, 8, 1)]
+void CSCulling_15(uint3 id : SV_DispatchThreadID)
+{
+	cull(id);
+}
+

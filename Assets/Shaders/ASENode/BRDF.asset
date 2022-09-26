@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b2425a2284af743826c689403a4924, type: 3}
+  m_Name: BRDF
+  m_EditorClassIdentifier: 
+  m_functionInfo: "// Made with Amplify Shader Editor\n// Available at the Unity
+    Asset Store - http://u3d.as/y3X \n/*ASEBEGIN\nVersion=18900\n227;264;1730;1019;1708.912;308.9104;1;True;False\nNode;AmplifyShaderEditor.FunctionInput;3;-818,22.5;Inherit;False;Normal;3;3;False;1;0;FLOAT3;0,0,0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.FunctionInput;7;-828.1803,-351.0817;Inherit;False;DiffuseColor;3;0;False;1;0;FLOAT3;0,0,0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.FunctionInput;8;-826.1803,-254.0817;Inherit;False;SpecColor;3;1;False;1;0;FLOAT3;0,0,0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.FunctionInput;6;-875.1803,-148.0817;Inherit;False;OneMinusReflectivity;1;2;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionInput;2;-813,107.5;Inherit;False;ViewDir;3;5;False;1;0;FLOAT3;0,0,0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.FunctionInput;9;-823.153,194.8321;Inherit;False;LightDir;3;6;False;1;0;FLOAT3;0,0,0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.FunctionInput;15;-834.8771,381.6174;Inherit;False;IndirectSpecular;3;8;False;1;0;FLOAT3;0,0,0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.FunctionInput;14;-835.8771,293.6259;Inherit;False;IndirectDiffuse;3;7;False;1;0;FLOAT3;0,0,0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.FunctionInput;16;-805.3608,474.4695;Inherit;False;LightColor;3;9;False;1;0;FLOAT3;0,0,0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.FunctionInput;5;-827.1803,-63.08173;Inherit;False;Smoothness;1;4;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.CustomExpressionNode;4;-411.6239,-105.8761;Inherit;False;   
+    float3 reflDir = reflect (viewDir, normal)@$$    half nl = saturate(dot(normal,
+    lightDir))@$    half nv = saturate(dot(normal, viewDir))@$$    // Vectorize Pow4
+    to save instructions$    half2 rlPow4AndFresnelTerm = Pow4 (float2(dot(reflDir,
+    lightDir), 1-nv))@  // use R.L instead of N.H to save couple of instructions$   
+    half rlPow4 = rlPow4AndFresnelTerm.x@ // power exponent must match kHorizontalWarpExp
+    in NHxRoughness() function in GeneratedTextures.cpp$    half fresnelTerm = rlPow4AndFresnelTerm.y@$$   
+    half grazingTerm = saturate(smoothness + (1-oneMinusReflectivity))@$$    half3
+    color = BRDF3_Direct(diffColor, specColor, rlPow4, smoothness)@$    //color *=
+    lightColor * nl@$color *= lightColor@$    //color += BRDF3_Indirect(diffColor,
+    specColor, gi, grazingTerm, fresnelTerm)@$$    half3 c = indirectDiffuse * diffColor@$   
+    c += indirectSpecular * lerp (specColor, grazingTerm, fresnelTerm)@$$color +=
+    c@$return color@$$$    return half4(color, 1)@;3;False;10;True;diffColor;FLOAT3;0,0,0;In;;Inherit;False;True;specColor;FLOAT3;0,0,0;In;;Inherit;False;True;oneMinusReflectivity;FLOAT;0;In;;Inherit;False;True;smoothness;FLOAT;0;In;;Inherit;False;True;normal;FLOAT3;0,0,0;In;;Inherit;False;True;viewDir;FLOAT3;0,0,0;In;;Inherit;False;True;lightDir;FLOAT3;0,0,0;In;;Inherit;False;True;indirectDiffuse;FLOAT3;0,0,0;In;;Inherit;False;True;indirectSpecular;FLOAT3;0,0,0;In;;Inherit;False;True;lightColor;FLOAT3;0,0,0;In;;Inherit;False;BRDF_NoN.L;True;False;0;10;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT;0;False;3;FLOAT;0;False;4;FLOAT3;0,0,0;False;5;FLOAT3;0,0,0;False;6;FLOAT3;0,0,0;False;7;FLOAT3;0,0,0;False;8;FLOAT3;0,0,0;False;9;FLOAT3;0,0,0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.FunctionOutput;0;440.3973,-71.814;Inherit;False;True;-1;Output;0;False;1;0;FLOAT3;0,0,0;False;1;FLOAT3;0\nWireConnection;4;0;7;0\nWireConnection;4;1;8;0\nWireConnection;4;2;6;0\nWireConnection;4;3;5;0\nWireConnection;4;4;3;0\nWireConnection;4;5;2;0\nWireConnection;4;6;9;0\nWireConnection;4;7;14;0\nWireConnection;4;8;15;0\nWireConnection;4;9;16;0\nWireConnection;0;0;4;0\nASEEND*/\n//CHKSM=C008FEE2AE22EBFFA361D8483235F3D0D1141AD0"
+  m_functionName: 
+  m_description: 
+  m_additionalIncludes:
+    m_additionalIncludes: []
+    m_outsideIncludes: []
+  m_additionalPragmas:
+    m_additionalPragmas: []
+    m_outsidePragmas: []
+  m_additionalDirectives:
+    m_validData: 0
+    m_isDirty: 0
+    m_moduleName: ' Additional Directives'
+    m_independentModule: 1
+    m_customEdited: 0
+    m_additionalDirectives: []
+    m_shaderFunctionDirectives: []
+    m_nativeDirectives: []
+    m_nativeDirectivesIndex: -1
+    m_nativeDirectivesFoldout: 0
+    m_directivesSaveItems: []
+  m_nodeCategory: 3
+  m_customNodeCategory: 
+  m_previewPosition: 0
+  m_hidden: 0

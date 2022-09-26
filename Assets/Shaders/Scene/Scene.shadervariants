@@ -1,0 +1,264 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!200 &20000000
+ShaderVariantCollection:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Scene
+  m_Shaders:
+  - first: {fileID: 4800000, guid: b07ef947b92eeb645b72e3244ea58ede, type: 3}
+    second:
+      variants:
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON
+        passType: 8
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON _ALPHATEST_ON
+        passType: 8
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS
+          _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 11
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _ALPHATEST_ON
+          _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 11
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON
+        passType: 13
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS
+          _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 13
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON _ALPHATEST_ON
+        passType: 13
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _ALPHATEST_ON
+          _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 13
+  - first: {fileID: 4800000, guid: d0ab704a06f11e64fae90c7811686f04, type: 3}
+    second:
+      variants:
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON
+        passType: 8
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON _ALPHATEST_ON
+        passType: 8
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS
+          _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 11
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _ALPHATEST_ON
+          _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 11
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON
+        passType: 13
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS
+          _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 13
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON _ALPHATEST_ON
+        passType: 13
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _ALPHATEST_ON
+          _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 13
+  - first: {fileID: 4800000, guid: f01205aa5867dda498a4c2ff7a16c5bb, type: 3}
+    second:
+      variants: []
+  - first: {fileID: 4800000, guid: e20e9bca79165ea4983e517c3cfb30a1, type: 3}
+    second:
+      variants:
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON _ALPHATEST_ON
+        passType: 8
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _ALPHATEST_ON
+          _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 11
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON _ALPHATEST_ON
+        passType: 13
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _ALPHATEST_ON
+          _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 13
+  - first: {fileID: 4800000, guid: b3b2a7ca01e74904799dc0700171fc7b, type: 3}
+    second:
+      variants: []
+  - first: {fileID: 4800000, guid: d386ea24d147e6d40844fceca11396e8, type: 3}
+    second:
+      variants:
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON
+        passType: 8
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON _ALPHATEST_ON
+        passType: 8
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS
+          _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 11
+      - keywords: INSTANCING_ON
+        passType: 13
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON
+        passType: 13
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS
+          _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 13
+      - keywords: INSTANCING_ON _ALPHATEST_ON
+        passType: 13
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON _ALPHATEST_ON
+        passType: 13
+  - first: {fileID: 4800000, guid: f7fb1e7020b6042468908f343f8bfb6d, type: 3}
+    second:
+      variants:
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON
+        passType: 8
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON _ALPHATEST_ON
+        passType: 8
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS
+          _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 11
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _ALPHATEST_ON
+          _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 11
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON
+        passType: 13
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS
+          _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 13
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON _ALPHATEST_ON
+        passType: 13
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _ALPHATEST_ON
+          _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 13
+  - first: {fileID: 4800000, guid: f8dca46f7f8a0ef499f23d159d981703, type: 3}
+    second:
+      variants:
+      - keywords: INSTANCING_ON LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS
+          _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 11
+      - keywords: INSTANCING_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS
+        passType: 13
+      - keywords: INSTANCING_ON LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS
+          _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 13
+  - first: {fileID: 4800000, guid: 89b457fff2ef7a641a719b6278e2f6ac, type: 3}
+    second:
+      variants:
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON
+        passType: 8
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS
+          _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 11
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _ALPHATEST_ON
+          _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 11
+      - keywords: INSTANCING_ON
+        passType: 13
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON
+        passType: 13
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS
+          _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 13
+  - first: {fileID: 4800000, guid: 7a677cb0ae237a64cb927b57c5f10ac7, type: 3}
+    second:
+      variants:
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON
+        passType: 8
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS
+          _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 11
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _ALPHATEST_ON
+          _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 11
+      - keywords: INSTANCING_ON
+        passType: 13
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON
+        passType: 13
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS
+          _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 13
+  - first: {fileID: 4800000, guid: bb36981c55a783a4398d9e4f191c0e24, type: 3}
+    second:
+      variants:
+      - keywords: INSTANCING_ON
+        passType: 13
+  - first: {fileID: 4800000, guid: 6cd9761c3d34f9d4b901d3100a172831, type: 3}
+    second:
+      variants:
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON
+        passType: 8
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON _ALPHATEST_ON
+        passType: 8
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS
+          _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 11
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _ALPHATEST_ON
+          _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 11
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON
+        passType: 13
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS
+          _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 13
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON _ALPHATEST_ON
+        passType: 13
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _ALPHATEST_ON
+          _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 13
+  - first: {fileID: 4800000, guid: 7cdd7a6c7de361648a9a180144404a8f, type: 3}
+    second:
+      variants:
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON _ALPHATEST_ON
+        passType: 8
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS_VERTEX _ADDITIONAL_LIGHT_SHADOWS
+          _ALPHATEST_ON _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 11
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON _ALPHATEST_ON
+        passType: 13
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS_VERTEX _ADDITIONAL_LIGHT_SHADOWS
+          _ALPHATEST_ON _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 13
+  - first: {fileID: 4800000, guid: 6ddc92bdc2f8ac5448a64a415bd1ad89, type: 3}
+    second:
+      variants: []
+  - first: {fileID: 4800000, guid: 7dbb2e81fbdf4af438e1545b62463501, type: 3}
+    second:
+      variants:
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON
+        passType: 8
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON _ALPHATEST_ON
+        passType: 8
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS
+          _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 11
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _ALPHATEST_ON
+          _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 11
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON
+        passType: 13
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS
+          _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 13
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON _ALPHATEST_ON
+        passType: 13
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _ALPHATEST_ON
+          _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 13
+  - first: {fileID: 4800000, guid: cf6d00d22163b15409af894ef4a32a24, type: 3}
+    second:
+      variants: []
+  - first: {fileID: 4800000, guid: 305b48104f8be9642b5b67d00dc0460e, type: 3}
+    second:
+      variants:
+      - keywords: INSTANCING_ON _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 0
+  - first: {fileID: 4800000, guid: ba0b5c090ea042839b7af7bbf28ff6ad, type: 3}
+    second:
+      variants:
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON
+        passType: 8
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON _ALPHATEST_ON
+        passType: 8
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS
+          _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 11
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _ALPHATEST_ON
+          _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 11
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON
+        passType: 13
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS
+          _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 13
+      - keywords: DOTS_INSTANCING_ON INSTANCING_ON _ALPHATEST_ON
+        passType: 13
+      - keywords: LIGHTMAP_ON _ADDITIONAL_LIGHTS _ADDITIONAL_LIGHT_SHADOWS _ALPHATEST_ON
+          _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT
+        passType: 13

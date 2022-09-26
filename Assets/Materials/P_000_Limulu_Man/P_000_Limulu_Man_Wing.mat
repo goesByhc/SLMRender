@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: P_000_Limulu_Man_Wing
+  m_Shader: {fileID: 4800000, guid: 3e1ba0df678a2a640a4848f4860a5f3a, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BrightMap:
+        m_Texture: {fileID: 2800000, guid: e784cca29fd4bdf4093bc5ffa41080c5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DarkMap:
+        m_Texture: {fileID: 2800000, guid: ae0fe3ca5aae5c846a3489537727ff36, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LightMap:
+        m_Texture: {fileID: 2800000, guid: f4c4b1b679ba08b448bbbf429dff7743, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AOIntensity: 1
+    - _BloomFactor: 0.099
+    - _CustomShadowWeight: 1.029
+    - _DarkSmoothStep: 0.409
+    - _DarkThreshold: -0.1
+    - _DebugChannel: 0
+    - _LambertGradient: 0.184
+    - _OutlineBias: 10
+    - _OutlineWidth: 3
+    - _RimIntensity: 8.6
+    - _RimIntensityShallow: 25.4
+    - _RimPow: 4.92
+    - _RimThreshold: 1.33
+    - _RimThresholdShallow: 0.083
+    - _RimWidth: 0
+    - _Saturation: 0.8
+    - _ShadowThreshold: 0.218
+    - _SpecGradient: 0.394
+    - _SpecIntensity: 0
+    - _SpecSize: 1
+    - _SpecSizeScale: 0.061
+    - _SpecSmoothStep: 0.228
+    - _SpecThreshold: 0
+    - _Stencil: 50
+    - _StencilNo: 1
+    m_Colors:
+    - _DarkColor: {r: 1, g: 1, b: 1, a: 1}
+    - _InnerLineColor: {r: 0, g: 0, b: 0, a: 0}
+    - _OutlineColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
+    - _RimColor: {r: 0.8679245, g: 0.5294445, b: 0.14247058, a: 1}
+    - _ShadowColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecTintColor: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 1}
+    - _TintColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []

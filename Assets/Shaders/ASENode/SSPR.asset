@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b2425a2284af743826c689403a4924, type: 3}
+  m_Name: SSPR
+  m_EditorClassIdentifier: 
+  m_functionInfo: "// Made with Amplify Shader Editor\n// Available at the Unity
+    Asset Store - http://u3d.as/y3X \n/*ASEBEGIN\nVersion=18900\n125.6;198.4;1905.6;785.4;1999.517;315.3795;1.3;True;True\nNode;AmplifyShaderEditor.WorldPosInputsNode;29;-1201.574,-279.4103;Inherit;False;0;4;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3\nNode;AmplifyShaderEditor.ScreenPosInputsNode;28;-1199.574,-117.4103;Inherit;False;0;False;0;5;FLOAT4;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4\nNode;AmplifyShaderEditor.FunctionInput;30;-1211.574,78.58972;Inherit;False;ScreenPosNoise;2;0;False;1;0;FLOAT2;0,0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.FunctionInput;33;-1199.574,162.5897;Inherit;False;Roughness;1;1;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.ClampOpNode;37;-898.574,314.5897;Inherit;False;3;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;1;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionInput;36;-1149.574,329.5897;Inherit;False;SSRPUsage;1;2;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.ClampOpNode;34;-921.574,153.5897;Inherit;False;3;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;1;False;1;FLOAT;0\nNode;AmplifyShaderEditor.CustomExpressionNode;24;-644.2803,-21.27649;Inherit;False;ReflectionInput
+    reflectionData@$reflectionData.posWS = posWS@$reflectionData.screenPos = screenPos@$reflectionData.screenSpaceNoise
+    = screenPosNoise@$reflectionData.roughness = roughness@$reflectionData.SSPR_Usage
+    = ssrpUsage@$$half3 resultReflection = GetResultReflection(reflectionData)@$return
+    resultReflection@;3;False;5;True;posWS;FLOAT3;0,0,0;In;;Inherit;False;True;screenPos;FLOAT4;0,0,0,0;In;;Inherit;False;True;screenPosNoise;FLOAT2;0,0;In;;Inherit;False;True;roughness;FLOAT;0;In;;Inherit;False;True;ssrpUsage;FLOAT;0;In;;Inherit;False;SSPR;True;False;0;5;0;FLOAT3;0,0,0;False;1;FLOAT4;0,0,0,0;False;2;FLOAT2;0,0;False;3;FLOAT;0;False;4;FLOAT;0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.FunctionOutput;0;-247.4105,-53.1817;Inherit;False;True;-1;Output;0;False;1;0;FLOAT3;0,0,0;False;1;FLOAT3;0\nWireConnection;37;0;36;0\nWireConnection;34;0;33;0\nWireConnection;24;0;29;0\nWireConnection;24;1;28;0\nWireConnection;24;2;30;0\nWireConnection;24;3;34;0\nWireConnection;24;4;37;0\nWireConnection;0;0;24;0\nASEEND*/\n//CHKSM=802B40FB6D170379CB69878A1C126DF6891DB91C"
+  m_functionName: 
+  m_description: 
+  m_additionalIncludes:
+    m_additionalIncludes: []
+    m_outsideIncludes: []
+  m_additionalPragmas:
+    m_additionalPragmas: []
+    m_outsidePragmas: []
+  m_additionalDirectives:
+    m_validData: 0
+    m_isDirty: 1
+    m_moduleName: ' Additional Directives'
+    m_independentModule: 1
+    m_customEdited: 0
+    m_additionalDirectives:
+    - {fileID: 0}
+    - {fileID: 0}
+    m_shaderFunctionDirectives: []
+    m_nativeDirectives: []
+    m_nativeDirectivesIndex: -1
+    m_nativeDirectivesFoldout: 0
+    m_directivesSaveItems:
+    - LineType: 0
+      LineValue: ../MobileSSPRInclude.hlsl
+      GUIDToggle: 0
+      GUIDValue: 
+      Origin: 2
+    - LineType: 2
+      LineValue: multi_compile _ _MobileSSPR
+      GUIDToggle: 0
+      GUIDValue: 
+      Origin: 2
+  m_nodeCategory: 3
+  m_customNodeCategory: 
+  m_previewPosition: 0
+  m_hidden: 0

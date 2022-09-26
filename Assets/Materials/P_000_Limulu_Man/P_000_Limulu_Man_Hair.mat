@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: P_000_Limulu_Man_Hair
+  m_Shader: {fileID: 4800000, guid: 3e1ba0df678a2a640a4848f4860a5f3a, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BrightMap:
+        m_Texture: {fileID: 2800000, guid: 69c4e56aa6604e343a8b27d9117452c7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DarkMap:
+        m_Texture: {fileID: 2800000, guid: 0cb7bd1c074fd7e489c5651cfd66cebb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DissolveMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LightMap:
+        m_Texture: {fileID: 2800000, guid: 649b257e2e6379a429ac179b99dac9c9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ADDITIONAL_LIGHT: 1
+    - _AOIntensity: 1
+    - _BloomFactor: 0
+    - _CustomShadowWeight: 1
+    - _DISSOLVE: 0
+    - _DarkSmoothStep: 0
+    - _DarkThreshold: -0.1
+    - _DebugChannel: 0
+    - _DissolveRange: 0
+    - _LambertGradient: 1
+    - _OutlineBias: 8.84
+    - _OutlineWidth: 2
+    - _RimIntensity: 9
+    - _RimIntensityShallow: 14.5
+    - _RimPow: 2.69
+    - _RimThreshold: 2.78
+    - _RimThresholdShallow: 0.059
+    - _RimWidth: 0.101
+    - _Saturation: 1
+    - _ShadowThreshold: 0.264
+    - _SpecGradient: 0.262
+    - _SpecIntensity: 2.7
+    - _SpecSize: 54
+    - _SpecSizeScale: 0.2
+    - _SpecSmoothStep: 0
+    - _SpecThreshold: 0.1
+    - _Stencil: 50
+    - _StencilNo: 1
+    - __dirty: 0
+    m_Colors:
+    - _DarkColor: {r: 1, g: 1, b: 1, a: 1}
+    - _InnerLineColor: {r: 1, g: 1, b: 1, a: 1}
+    - _OutlineColor: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 1}
+    - _RimColor: {r: 0.6784314, g: 0.42620432, b: 0.15686275, a: 1}
+    - _ShadowColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecTintColor: {r: 0.43171945, g: 0.5927198, b: 0.6320754, a: 1}
+    - _TintColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
